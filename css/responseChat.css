@@ -1,0 +1,9 @@
+.input-container {
+  position: relative;
+  width: 100%;
+}
+.response-background {
+  background-color: #4a5568; /* رنگ پس‌زمینه */
+  padding: 1rem;
+  border-radius: 8px;
+}

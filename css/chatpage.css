@@ -1,0 +1,46 @@
+/* styles.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  padding-left: 2.5rem; /* فضای برای آیکون سمت چپ */
+  padding-right: 6rem; /* فضای بیشتر برای آیکون‌های سمت راست */
+  line-height: 3rem; /* ارتفاع خط برای وسط‌چین کردن عمودی متن */
+  height: 3rem; /* ارتفاع مشخص برای input */
+  margin: 0;
+  z-index: 1;
+}
+
+.icon-left,
+.icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  z-index: 2;
+}
+
+.icon-left {
+  left: 0.75rem;
+}
+
+.icon-right {
+  right: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.icon-left:hover i,
+.icon-right:hover i {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}

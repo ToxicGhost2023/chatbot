@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>چت بات</title>
+
+    <!-- اضافه کردن Tailwind با استفاده از اسکریپت -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- پیکربندی Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a202c",
+              secondary: "#2d3748",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="container mx-auto flex justify-between items-center p-4">
+        <!-- آیکون زبان و شخص -->
+        <div class="flex items-center space-x-reverse space-x-4">
+          <!-- آیکون شخص -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            class="bi bi-person-fill mb-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+
+          <!-- منوی انتخاب زبان -->
+          <div class="relative">
+            <a href="#" id="dropdownToggle" class="dropdown-toggle text-lg"
+              >FA</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-chevron-down mt-1 mx-auto"
+              viewBox="0 8 16 16"
+            >
+              <path
+                d="M1.5 6.5a.5.5 0 0 1 .707 0L8 11.293 13.793 6.5a.5.5 0 0 1 .707.707l-5.5 5.5a.5.5 0 0 1-.707 0l-5.5-5.5a.5.5 0 0 1 0-.707z"
+              />
+            </svg>
+
+            <!-- Dropdown برای زبان -->
+            <ul
+              id="dropdownMenu"
+              class="absolute hidden bg-white shadow-md mt-2 p-2 rounded dropdown-menu"
+            >
+              <li>
+                <a class="block px-4 py-2 hover:bg-gray-100" href="#">FA</a>
+              </li>
+              <li><hr class="my-2" /></li>
+              <li>
+                <a class="block px-4 py-2 hover:bg-gray-100" href="#">EN</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul
+          id="navMenu"
+          class="hidden md:flex space-x-reverse space-x-12 text-sm md:text-lg"
+        >
+          <li>
+            <a
+              class="hover:text-gray-700 hover:border-b-2 hover:border-gray-700 pb-1 transition-all"
+              href="#"
+              >خانه</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-700 hover:border-b-2 hover:border-gray-700 pb-1 transition-all"
+              href="#"
+              >چت با رادین</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-700 hover:border-b-2 hover:border-gray-700 pb-1 transition-all"
+              href="#"
+              >تماس با ما</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-gray-700 hover:border-b-2 hover:border-gray-700 pb-1 transition-all"
+              href="#"
+              >درباره ما</a
+            >
+          </li>
+        </ul>
+        <!-- لوگو -->
+        <img src="/code2-main/image/16.png" alt="Logo" class="w-24 h-10 mt-1" />
+        <!-- منوی همبرگر برای موبایل -->
+        <div class="md:hidden">
+          <button
+            id="hamburgerBtn"
+            class="focus:outline-none transform transition-transform duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="w-8 h-8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 5h16v2H4V5zm0 6h16v2H4v-2zm0 6h16v2H4v-2z"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- منوی کشویی برای موبایل -->
+      <ul
+        id="dropdownNavMenu"
+        class="hidden flex-col space-y-2 bg-white p-4 md:hidden transition-all duration-500 transform scale-y-0 origin-top shadow-lg rounded-lg"
+      >
+        <li
+          class="opacity-0 transform translate-y-2 transition-all duration-500 delay-100"
+        >
+          <a class="block hover:text-gray-700" href="#">خانه</a>
+        </li>
+        <li
+          class="opacity-0 transform translate-y-2 transition-all duration-500 delay-200"
+        >
+          <a class="block hover:text-gray-700" href="#">چت با رادین</a>
+        </li>
+        <li
+          class="opacity-0 transform translate-y-2 transition-all duration-500 delay-300"
+        >
+          <a class="block hover:text-gray-700" href="#">تماس با ما</a>
+        </li>
+        <li
+          class="opacity-0 transform translate-y-2 transition-all duration-500 delay-400"
+        >
+          <a class="block hover:text-gray-700" href="#">درباره ما</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <section class="">
+      <div class="container mx-auto mt-[100px]">
+        <div class="relative flex flex-col md:flex-row items-center">
+          <div
+            class="md:absolute md:right-[10px] md:top-[20px] text-center md:text-right mb-40 mr-[0px]"
+          >
+            <h4 class="text-xl font-semibold mr-[50px] mt-6 text-primary ml-[50px]">
+              چت بات هوشمند رادین
+            </h4>
+            <div class="md:absolute md:left-[-40px] md:top-[80px]  p-4 ">
+              <h5 class="text-xl md:text-3xl font-bold text-gray-600 ml-[5px] ">
+                انقلابی در گفت و گو متنی
+              </h5>
+            </div>
+            <div
+              class="flex justify-center md:justify-start space-x-6 md:mr-[150px] md:mt-[110px]"
+            >
+              <button
+                class="bg-gray-200 text-black p-3 mx-2 rounded-full shadow-lg hover:bg-gray-300 hover:scale-105 transition-all duration-300"
+              >
+                تماس با ما
+              </button>
+              <button
+              onclick="window.location.href='chatpage.html'"
+              class="md:ml-[100px] bg-primary text-white p-3 mx-2 rounded-full shadow-lg hover:bg-secondary hover:scale-105 transition-all duration-300"
+              >
+                چت با رادین
+              </button>
+            </div>
+          </div>
+
+          <!-- بخش تصویر -->
+          <div class="md:absolute md:left-[80px] md:top-[-110px]">
+            <div class="relative">
+              <img
+                src="/code2-main/image/shape.png"
+                class="mb-3 hidden md:block md:object-cover md:w-[850px] md:h-auto"
+                alt="Background Image"
+              />
+              <img
+                src="/code2-main/image/1116111.png"
+                class="relative inset-0 m-auto h-auto w-[150px] p-4 ml-[3px] md:ml-[100px] bg-black md:p-0 md:bg-black md:absolute md:w-[200px]"
+                alt="Overlay Image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/menu.js"></script>
+  </body>
+</html>

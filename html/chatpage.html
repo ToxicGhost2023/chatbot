@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه چت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/chatpage.css" />
+    <link rel="stylesheet" href="/css/responseChat.css.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              zinc: "#111111",
+              stone: "#222222",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-stone">
+    <header>
+      <nav class="flex justify-between">
+        <section class="flex gap-4 mr-4">
+          <!-- مربوط به ایکون ادمک -->
+          <section>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-person-fill mt-4 ml-2 text-white"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
+          </section>
+          <!-- مربوط به ایکون چت -->
+          <section>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 text-white mt-5 ml-2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+              />
+            </svg>
+          </section>
+        </section>
+        <!-- لگوی رادین -->
+        <section class="mr-4">
+          <img
+            src="/code2-main/image/Text.png"
+            alt="Logo"
+            class="w-20 h-10 mt-4 ml-5"
+          />
+        </section>
+      </nav>
+
+      <main class="mt-[100px] flex flex-col justify-center items-center flex-1">
+        <section>
+          <div id="logoContainer">
+            <img
+              src="/code2-main/image/16111.png"
+              alt="Logo"
+              class="w-36 h-10 mt-1"
+            />
+          </div>
+        </section>
+
+        <!-- output -->
+        <div
+          id="responseContainer"
+          class="mt-4 hidden ml-[650px] bg-gray-400 bg-opacity-75 rounded-lg text-white p-2 shadow-lg"
+        ></div>
+
+        <section class="mt-[400px] w-full px-60 mb-4">
+          <div class="input-container relative">
+            <input
+              id="chatInput"
+              placeholder="چیزی بنویسید..."
+              type="text"
+              class="border p-2 w-full rounded-full bg-black text-white input-field pl-10 pr-20 border-0 outline-none"
+            />
+
+            <span
+              class="icon-left absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 flex space-x-3"
+            >
+              <i class="fas fa-laugh fa-lg"></i>
+            </span>
+
+            <span
+              class="icon-right absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 flex space-x-3"
+            >
+              <i
+                class="fab fa-telegram-plane fa-lg cursor-pointer"
+                id="telegramIcon"
+              ></i>
+              <i class="fas fa-paperclip fa-lg"></i>
+            </span>
+          </div>
+        </section>
+      </main>
+    </header>
+    <script src="../js/getInput.js"></script>
+  </body>
+</html>
